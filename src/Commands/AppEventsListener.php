@@ -107,7 +107,7 @@ class AppEventsListener extends Command
                 $handledMessages[] = $message;
                 continue;
             } catch (UnsupportedEventException $e) {
-                Log::debug('Unsupported message', [
+                Log::debug('Unsupported pubsub event', [
                     'exception' => $e,
                     'message' => $message->info(),
                     'published_at' => $message->publishTime(),
