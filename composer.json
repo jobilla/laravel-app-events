@@ -1,5 +1,5 @@
 {
-    "name": "decahedron/laravel-app-events",
+    "name": "jobilla/laravel-app-events",
     "description": "Manage application-wide events for SOAs with Google Cloud PubSub",
     "license": "MIT",
     "authors": [
