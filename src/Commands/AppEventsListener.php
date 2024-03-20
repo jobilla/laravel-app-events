@@ -102,9 +102,11 @@ class AppEventsListener extends Command
                 $job = AppEventFactory::fromMessage($message);
             } catch (UnserializableProtoException $e) {
                 if (! $this->option('silent')) {
-                    $this->info('No implementation registered for message type: ' . $e->protoMessageType);
+                    Log::warning('Proto is not registered', [
+                        'proto' => $e->protoMessageType,
+                    ]);
+                    $this->warning('No implementation registered for message type: ' . $e->protoMessageType);
                 }
-                $handledMessages[] = $message;
                 continue;
             } catch (UnsupportedEventException $e) {
                 Log::debug('Unsupported pubsub event', [
