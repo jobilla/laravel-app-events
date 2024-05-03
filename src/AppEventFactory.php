@@ -12,9 +12,25 @@ class AppEventFactory
      * @throws UnserializableProtoException
      * @throws UnsupportedEventException
      */
-    public static function fromMessage(Message $message): AppEvent
+    public static function fromMessage(Message $message): mixed
     {
-        return new AppEvent($message->attribute('event_type'), static::resolveProtobufInstance($message));
+        $handler = static::resolveHandler($message->attribute('event_type'));
+
+        return new $handler(static::resolveProtobufInstance($message));
+    }
+
+    /**
+     * @throws UnsupportedEventException
+     */
+    protected static function resolveHandler(string $eventName): string
+    {
+        $configKey = 'app-events.handlers.' . $eventName;
+
+        if (! Config::has($configKey)) {
+            throw new UnsupportedEventException($eventName);
+        }
+
+        return Config::get($configKey);
     }
 
     /**

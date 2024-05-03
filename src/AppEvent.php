@@ -34,15 +34,4 @@ class AppEvent implements ShouldQueue
         $this->payload = $payload;
         $this->event = $event;
     }
-
-    public function handle()
-    {
-        foreach (Config::get('app-events.handlers') as $event => $handler) {
-            if ($this->event !== $event) {
-                continue;
-            }
-
-            Container::getInstance()->make($handler)->handle($this->payload, $event);
-        }
-    }
 }

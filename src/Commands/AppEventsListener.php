@@ -101,12 +101,7 @@ class AppEventsListener extends Command
             try {
                 $job = AppEventFactory::fromMessage($message);
             } catch (UnserializableProtoException $e) {
-                if (! $this->option('silent')) {
-                    Log::warning('Proto is not registered', [
-                        'proto' => $e->protoMessageType,
-                    ]);
-                    $this->warning('No implementation registered for message type: ' . $e->protoMessageType);
-                }
+                $handledMessages[] = $message;
                 continue;
             } catch (UnsupportedEventException $e) {
                 Log::debug('Unsupported pubsub event', [
@@ -114,9 +109,9 @@ class AppEventsListener extends Command
                     'message' => $message->info(),
                     'published_at' => $message->publishTime(),
                 ]);
-                $handledMessages[] = $message;
                 continue;
             }
+
             if (! $this->option('silent')) {
                 $this->info('Handling message: '.$job->event);
             }
