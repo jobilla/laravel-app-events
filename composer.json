@@ -6,6 +6,10 @@
         {
             "name": "Leo Sjöberg",
             "email": "leo@decahedron.io"
+        },
+        {
+            "name": "Hakan Aktas",
+            "email": "hakan.aktas@jobilla.com"
         }
     ],
     "require": {
