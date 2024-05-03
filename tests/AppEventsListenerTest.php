@@ -1,9 +1,9 @@
 <?php
 
-namespace Decahedron\AppEvents\Tests;
+namespace Jobilla\AppEvents\Tests;
 
-use Decahedron\AppEvents\Commands\AppEventsListener;
-use Decahedron\AppEvents\Tests\Proto\Test;
+use Jobilla\AppEvents\Commands\AppEventsListener;
+use Jobilla\AppEvents\Tests\Proto\Test;
 use Google\Cloud\PubSub\Message;
 use Google\Cloud\PubSub\PubSubClient;
 use Google\Cloud\PubSub\Subscription;

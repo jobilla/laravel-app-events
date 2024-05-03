@@ -1,18 +1,18 @@
 <?php
 
-namespace Decahedron\AppEvents\Commands;
+namespace Jobilla\AppEvents\Commands;
 
-use Decahedron\AppEvents\UnsupportedEventException;
+use Jobilla\AppEvents\UnsupportedEventException;
 use Exception;
 use Google\Cloud\Core\Exception\BadRequestException;
 use Google\Cloud\PubSub\Subscription;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 use Google\Cloud\PubSub\PubSubClient;
-use Decahedron\AppEvents\AppEventFactory;
+use Jobilla\AppEvents\AppEventFactory;
 use Illuminate\Contracts\Config\Repository;
-use Decahedron\AppEvents\UnserializableProtoException;
-use Decahedron\AppEvents\SubscriptionTopicMismatchException;
+use Jobilla\AppEvents\UnserializableProtoException;
+use Jobilla\AppEvents\SubscriptionTopicMismatchException;
 
 class AppEventsListener extends Command
 {

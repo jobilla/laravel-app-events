@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Decahedron\\AppEvents\\": "src/"
+            "Jobilla\\AppEvents\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Decahedron\\AppEvents\\Tests\\Proto\\": "tests/fixtures/Decahedron/AppEvents/Tests/Proto"
+            "Jobilla\\AppEvents\\Tests\\Proto\\": "tests/fixtures/Jobilla/AppEvents/Tests/Proto"
         }
     },
     "extra": {
@@ -38,7 +38,7 @@
                 "Kainxspirits\\PubSubQueue\\PubSubQueueServiceProvider"
             ],
             "providers": [
-                "Decahedron\\AppEvents\\AppEventsProvider"
+                "Jobilla\\AppEvents\\AppEventsProvider"
             ]
         }
     },

@@ -1,6 +1,6 @@
 <?php
 
-namespace Decahedron\AppEvents;
+namespace Jobilla\AppEvents;
 
 use Google\Cloud\PubSub\PubSubClient;
 use Kainxspirits\PubSubQueue\Connectors\PubSubConnector as BaseConnector;

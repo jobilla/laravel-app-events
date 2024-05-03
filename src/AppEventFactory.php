@@ -1,6 +1,6 @@
 <?php
 
-namespace Decahedron\AppEvents;
+namespace Jobilla\AppEvents;
 
 use Google\Cloud\PubSub\Message;
 use Google\Protobuf\Internal\Message as ProtobufMessage;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Decahedron\AppEvents;
+namespace Jobilla\AppEvents;
 
-use Decahedron\AppEvents\Commands\AppEventsListener;
+use Jobilla\AppEvents\Commands\AppEventsListener;
 use Google\Cloud\PubSub\PubSubClient;
 use Illuminate\Support\ServiceProvider;
 

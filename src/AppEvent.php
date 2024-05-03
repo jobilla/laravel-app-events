@@ -1,6 +1,6 @@
 <?php
 
-namespace Decahedron\AppEvents;
+namespace Jobilla\AppEvents;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Container\Container;
