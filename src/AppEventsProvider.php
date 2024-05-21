@@ -41,7 +41,16 @@ class AppEventsProvider extends ServiceProvider
 
         $this->app->bind(PubSubClient::class, function ($app) {
             return new PubSubClient([
-                'projectId' => $this->app['config']->get('app-events.project_id')
+                'projectId' => $this->app['config']->get('app-events.project_id'),
+                'transport' => 'grpc',
+                'transportConfig' => [
+                    'grpc' => [
+                        'stubOpts' => [
+                            'grpc.max_receive_message_length' => 10 * 1024 * 1024,
+                            'grpc.max_send_message_length' => 10 * 1024 * 1024
+                        ]
+                    ]
+                ]
             ]);
         });
     }
